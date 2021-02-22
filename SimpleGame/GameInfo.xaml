@@ -1,0 +1,36 @@
+﻿<Window x:Class="SimpleGame.GameInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleGame"
+        mc:Ignorable="d"
+        Title="GameInfo" Height="400" Width="300" Background="AliceBlue">
+    <Grid>
+        <StackPanel
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            <Label
+                Content="Payouts:">                
+            </Label>
+            <Label
+                Content="Any Cherry Wins 1 Coin">
+            </Label>
+            <Label
+                Content="3 Cherries Wins 2X Bet">
+            </Label>
+            <Label
+                Content="3 Grapes wins 3X Bet">
+            </Label>
+            <Label
+                Content="3 Diamonds wins 5X Bet">
+            </Label>
+            <Label
+                Content="3 7's wins 10X Bet">
+            </Label>
+            <Label
+                Content="3 Bernies (Jackpot) wins 20X Bet">
+            </Label>
+        </StackPanel>
+    </Grid>
+</Window>

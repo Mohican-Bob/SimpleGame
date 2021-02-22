@@ -1,0 +1,170 @@
+﻿<Window x:Class="SimpleGame.Presentation.GameView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleGame.Presentation"
+        mc:Ignorable="d"
+        Title="GameView" Height="450" Width="800" Background="AliceBlue">
+
+
+    <Grid>
+        <StackPanel
+            Height="450">
+        <StackPanel
+            Height="70"
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center">
+            <Label
+                Content="Slots-Of-Fun!"
+                FontSize="55">                
+            </Label>          
+        </StackPanel>
+        <Grid
+            Margin="60,0,60,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                Grid.Column="0"
+                Source="{Binding Reel1}"
+                Width="200"
+                Height="200" Margin="10,-10,14,10">
+            </Image>               
+            <Image 
+               Grid.Column="1"               
+               Source="{Binding Reel2}"
+               Width="200"
+               Height="200"></Image>
+            <Image 
+               Grid.Column="2"
+               Source="{Binding Reel3}"
+               Width="200"
+               Height="200"></Image>
+        </Grid>
+        <Grid
+            Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            <StackPanel
+                Grid.Column="0"
+                Grid.Row="0"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Label
+                    FontSize="30"
+                    Content="Result:"/>
+                <Label
+                    x:Name="Status"
+                    FontSize="30"
+                    Content="{Binding Result}"/>
+            </StackPanel>
+            <StackPanel
+                Grid.Column="1"
+                Grid.Row="0"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                    <Label
+                    FontSize="30"
+                    Content="Won:"/>
+                    <Label
+                    x:Name="Won"
+                    FontSize="30"
+                    Content="{Binding Won}"/>
+                    <Label
+                    FontSize="30"
+                    Content="Total:"/>
+                    <Label
+                    FontSize="30"
+                    Content="{Binding Coin}">
+                    </Label>
+                </StackPanel>
+                <StackPanel
+                Grid.Column="0"
+                Grid.Row="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                    <Button
+                        x:Name="Game_Info"
+                        Content="Game Info" Click="Game_Info_Click">                        
+                    </Button>
+                    <Button
+                        Margin="10,0"
+                        x:Name="Reset_Game"
+                        Content="Reset Game" Click="Reset_Game_Click"
+                        />
+                </StackPanel>
+                <StackPanel
+                Grid.Column="1"
+                Grid.Row="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+                <Label
+                    FontSize="30"
+                    Content="Bet:"/>
+                <Button
+                    Tag="down"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="30"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Margin="10,0,10,0"
+                    Width="50"
+                    Height="50"
+                    Content="-"
+                    Click="Bet_Click"></Button>
+                <Button
+                    Tag="up"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontSize="30"
+                    Margin="10,0,10,0"
+                    Width="50"
+                    Height="50"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Content="+"
+                    Click="Bet_Click"></Button>
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                Grid.Row="0"
+                Grid.Column="2">
+                    <Label
+                        FontSize="30"
+                        Content="Betting:"/>
+                    <Label
+                        x:Name="Betting"
+                        FontSize="30"
+                        Content="{Binding Betting}"/>
+            </StackPanel>
+            <StackPanel                
+                Grid.Row="1"
+                Grid.Column="2">
+                    <Button                        
+                        Height="50"
+                        Width="70"
+                        x:Name="Spin"
+                    Content="SPIN" Click="Spin_Click">
+                    </Button>
+            </StackPanel>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
